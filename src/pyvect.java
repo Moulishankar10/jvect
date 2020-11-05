@@ -21,17 +21,21 @@ class pyvect
         return cross_prod;
     }
 
+    public static double mod_vector(int arr[])
+    {
+        double mod = Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
+        return mod;
+    }
+
     public static double angle(int arr1[],int arr2[])
     {
-        double mod_a = Math.sqrt((arr1[0]^2)+(arr1[1]^2)+(arr1[2]^2));
-        double mod_b = Math.sqrt((arr2[0]^2)+(arr2[1]^2)+(arr2[2]^2));
-        double ang = Math.acos((dot(arr1,arr2))/(mod_a*mod_b));
+        double ang = Math.acos((dot(arr1,arr2))/(mod_vector(arr1)*mod_vector(arr2)));
         return ang;
     }
 
     public static double projection(int arr1[], int arr2[])
     {
-        double mod = Math.sqrt((arr2[0]^2)+(arr2[1]^2)+(arr2[2]^2));
+        double mod = mod_vector(arr2);
         double proj = dot(arr1,arr2)/mod;
         return proj;
     }
