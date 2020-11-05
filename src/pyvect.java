@@ -4,8 +4,8 @@ class pyvect
 {
     public static int dot(int arr1[], int arr2[])
     {
-        int dot_prod = 0, n = 3;
-        for(int i=0;i<n;i++)
+        int dot_prod = 0;
+        for(int i=0;i<3;i++)
         {
             dot_prod = dot_prod + arr1[i]*arr2[i];
         }
