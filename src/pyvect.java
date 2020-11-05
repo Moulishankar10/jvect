@@ -76,6 +76,13 @@ class pyvect
         return unit;
     }
 
+    public static double[] unitNormal(int arr1[],int arr2[])
+    {   
+        int cross_prod[] = cross(arr1,arr2);
+        double u_norm[] = unitVector(cross_prod);
+        return u_norm;
+    }
+
     public static double[] bisector(int arr1[],int arr2[])
     {
         double bsect[] = {0,0,0};
@@ -87,7 +94,7 @@ class pyvect
         }
         return bsect;
     }
-    
+
     public static double[] positionVector(int arr1[],int arr2[])
     {
         double pos[] = {0,0,0};
@@ -96,5 +103,18 @@ class pyvect
             pos[i] = 0.5*(arr1[i]+arr2[i]);
         }
         return pos;
+    }
+
+    public static Boolean isCoplanar(int arr1[],int arr2[],int arr3[])
+    {
+        int cop = dot(cross(arr1,arr2),arr3);
+        if (cop == 0)
+        {
+            return true;
+        } 
+        else
+        {
+            return false;
+        }
     }
 }
