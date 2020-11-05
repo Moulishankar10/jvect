@@ -52,5 +52,16 @@ class pyvect
         }
     }
 
-    
+    public static Boolean isCollinear(int arr1[], int arr2[])
+    {
+        int res[] = cross(arr1,arr2);
+        if ((res[0]==0)||(res[1]==0)||(res[2]==0))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
