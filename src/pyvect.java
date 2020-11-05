@@ -40,7 +40,7 @@ class pyvect
         return proj;
     }
 
-    public static Boolean isPerpendicular(int arr1[], int arr2[])
+    public static boolean isPerpendicular(int arr1[], int arr2[])
     {
         if (dot(arr1,arr2) == 0)
         {
@@ -52,7 +52,7 @@ class pyvect
         }
     }
 
-    public static Boolean isCollinear(int arr1[], int arr2[])
+    public static boolean isCollinear(int arr1[], int arr2[])
     {
         int res[] = cross(arr1,arr2);
         if ((res[0]==0)||(res[1]==0)||(res[2]==0))
@@ -105,7 +105,7 @@ class pyvect
         return pos;
     }
 
-    public static Boolean isCoplanar(int arr1[],int arr2[],int arr3[])
+    public static boolean isCoplanar(int arr1[],int arr2[],int arr3[])
     {
         int cop = dot(cross(arr1,arr2),arr3);
         if (cop == 0)
