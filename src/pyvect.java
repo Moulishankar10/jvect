@@ -28,4 +28,11 @@ class pyvect
         double ang = Math.acos((dot(arr1,arr2))/(mod_a*mod_b));
         return ang;
     }
+
+    public static double projection(int arr1[], int arr2[])
+    {
+        double mod = Math.sqrt((arr2[0]^2)+(arr2[1]^2)+(arr2[2]^2));
+        double proj = dot(arr1,arr2)/mod;
+        return proj;
+    }
 }
