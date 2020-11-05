@@ -21,7 +21,7 @@ class pyvect
         return cross_prod;
     }
 
-    public static double mod_vector(int arr[])
+    public static double modVector(int arr[])
     {
         double mod = Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
         return mod;
@@ -29,14 +29,28 @@ class pyvect
 
     public static double angle(int arr1[],int arr2[])
     {
-        double ang = Math.acos((dot(arr1,arr2))/(mod_vector(arr1)*mod_vector(arr2)));
+        double ang = Math.acos((dot(arr1,arr2))/(modVector(arr1)*modVector(arr2)));
         return ang;
     }
 
     public static double projection(int arr1[], int arr2[])
     {
-        double mod = mod_vector(arr2);
+        double mod = modVector(arr2);
         double proj = dot(arr1,arr2)/mod;
         return proj;
     }
+
+    public static Boolean isPerpendicular(int arr1[], int arr2[])
+    {
+        if (dot(arr1,arr2) == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    
 }
