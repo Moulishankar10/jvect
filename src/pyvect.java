@@ -64,4 +64,15 @@ class pyvect
             return false;
         }
     }
+
+    public static double[] unitVector(int arr[])
+    {
+        double unit[] = {0,0,0};
+        double mod = modVector(arr);
+        for(int i=0;i<3;i++)
+        {
+            unit[i] = unit[i]/mod;
+        }
+        return unit;
+    }
 }
