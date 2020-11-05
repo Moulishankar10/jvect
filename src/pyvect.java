@@ -75,4 +75,26 @@ class pyvect
         }
         return unit;
     }
+
+    public static double[] bisector(int arr1[],int arr2[])
+    {
+        double bsect[] = {0,0,0};
+        double unit_a[] = unitVector(arr1);
+        double unit_b[] = unitVector(arr2);
+        for (int i=0;i<3;i++)
+        {
+            bsect[i] = unit_a[i]+unit_b[i];
+        }
+        return bsect;
+    }
+    
+    public static double[] positionVector(int arr1[],int arr2[])
+    {
+        double pos[] = {0,0,0};
+        for(int i=0;i<3;i++)
+        {
+            pos[i] = 0.5*(arr1[i]+arr2[i]);
+        }
+        return pos;
+    }
 }
