@@ -155,8 +155,8 @@ class pyvect
         return rec;
     }
 
-    public static void main(String[] args) 
-    {
-        System.out.println(unitNormal([1,2,3],[4,5,6]));
-    }
+    //public static void main(String[] args) 
+    //{
+       // System.out.println(unitNormal([1,2,3],[4,5,6]));
+    //}
 }
