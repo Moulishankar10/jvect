@@ -91,11 +91,16 @@ class pyvect
     }
 
     // FUNCTION TO FIND UNIT NORMAL 
-    public static double[] unitNormal(int arr1[],int arr2[])
+    public static double[][] unitNormal(int arr1[],int arr2[])
     {   
         int cross_prod[] = cross(arr1,arr2);
         double u_norm[] = unitVector(cross_prod);
-        return u_norm;
+        double u_norm_inv[] = {0,0,0};
+        for (int i=0;i<3;i++)
+        {
+            u_norm_inv[i] = u_norm_inv[i]*-1;
+        }
+        return new double[][] {u_norm,u_norm_inv};
     }
 
     // FUNCTION TO FIND BISECTOR OF TWO VECTORS
