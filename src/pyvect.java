@@ -117,4 +117,17 @@ class pyvect
             return false;
         }
     }
+
+    public static double[] reciprocal(int arr1[],int arr2[],int arr3[])
+    {
+        double rec[] = {0,0,0};
+        int c1[] = cross(arr2,arr3);
+        int c2[] = cross(arr1,arr2);
+        int d = dot(c2,arr3);
+        for (int i=0;i<3;i++)
+        {
+            rec[i] = c1[i]/d;
+        }
+        return rec;
+    }
 }
