@@ -1,3 +1,6 @@
+// PACKAGE DEFINITION
+package pyvect;
+
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
 
