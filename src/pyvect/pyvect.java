@@ -95,10 +95,10 @@ class pyvect
     {   
         int cross_prod[] = cross(arr1,arr2);
         double u_norm[] = unitVector(cross_prod);
-        double u_norm_inv[] = {0,0,0};
+        double u_norm_inv[] = new double[3];
         for (int i=0;i<3;i++)
         {
-            u_norm_inv[i] = u_norm_inv[i]*-1;
+            u_norm_inv[i] = u_norm[i]*-1;
         }
         return new double[][] {u_norm,u_norm_inv};
     }
@@ -153,5 +153,10 @@ class pyvect
             rec[i] = c1[i]/d;
         }
         return rec;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println(unitNormal([1,2,3],[4,5,6]));
     }
 }
