@@ -4,8 +4,8 @@ package pyvect;
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
 
-// MAIN CLASS
-class pyvect
+// PYVECT MAIN CLASS
+public class pyvect
 {
 
     // FUNCTION TO FIND DOT PRODUCT
