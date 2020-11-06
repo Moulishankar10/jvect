@@ -1,2 +1,4 @@
 # pyvect-java
-Java version of python package called 'pvect' ! 
+Java version of python package called 'pyvect' which used for various vector operations such as finding the angle between vectors, projection of one vector over the other and much more...!
+
+
