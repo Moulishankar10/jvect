@@ -1,7 +1,11 @@
+// IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
 
+// MAIN CLASS
 class pyvect
 {
+
+    // FUNCTION TO FIND DOT PRODUCT
     public static int dot(int arr1[], int arr2[])
     {
         int dot_prod = 0;
@@ -12,6 +16,7 @@ class pyvect
         return dot_prod;
     }
 
+    // FUNCTION TO FIND CROSS PRODUCT
     public static int[] cross(int arr1[],int arr2[])
     {
         int cross_prod[] = {0,0,0};
@@ -21,18 +26,21 @@ class pyvect
         return cross_prod;
     }
 
+    // FUNCTION TO FIND MODULUS OF A VECTOR
     public static double modVector(int arr[])
     {
         double mod = Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
         return mod;
     }
 
+    // FUNCTION TO FIND ANGLE BETWEEN TWO VECTORS
     public static double angle(int arr1[],int arr2[])
     {
         double ang = Math.acos((dot(arr1,arr2))/(modVector(arr1)*modVector(arr2)));
         return ang;
     }
 
+    // FUNCTION TO FIND PROJECTION OF A VECTOR OVER ANOTHER
     public static double projection(int arr1[], int arr2[])
     {
         double mod = modVector(arr2);
@@ -40,6 +48,7 @@ class pyvect
         return proj;
     }
 
+    // FUNCTION TO FIND IF TWO VECTORS ARE PERPENDICULAR
     public static boolean isPerpendicular(int arr1[], int arr2[])
     {
         if (dot(arr1,arr2) == 0)
@@ -52,6 +61,7 @@ class pyvect
         }
     }
 
+    // FUNCTION TO FIND IF TWO VECTORS ARE COLLINEAR
     public static boolean isCollinear(int arr1[], int arr2[])
     {
         int res[] = cross(arr1,arr2);
@@ -65,6 +75,7 @@ class pyvect
         }
     }
 
+    // FUNCTION TO FIND UNIT VECTOR
     public static double[] unitVector(int arr[])
     {
         double unit[] = {0,0,0};
@@ -76,6 +87,7 @@ class pyvect
         return unit;
     }
 
+    // FUNCTION TO FIND UNIT NORMAL 
     public static double[] unitNormal(int arr1[],int arr2[])
     {   
         int cross_prod[] = cross(arr1,arr2);
@@ -83,6 +95,7 @@ class pyvect
         return u_norm;
     }
 
+    // FUNCTION TO FIND BISECTOR OF TWO VECTORS
     public static double[] bisector(int arr1[],int arr2[])
     {
         double bsect[] = {0,0,0};
@@ -95,6 +108,7 @@ class pyvect
         return bsect;
     }
 
+    // FUNCTION TO FIND POSITION VECTOR
     public static double[] positionVector(int arr1[],int arr2[])
     {
         double pos[] = {0,0,0};
@@ -105,6 +119,7 @@ class pyvect
         return pos;
     }
 
+    // FUNCTION TO FIND IF TWO VECTORS ARE COPLANAR
     public static boolean isCoplanar(int arr1[],int arr2[],int arr3[])
     {
         int cop = dot(cross(arr1,arr2),arr3);
@@ -118,6 +133,7 @@ class pyvect
         }
     }
 
+    // FUNCTION TO FIND RECIPROCAL OF THREE VECTORS
     public static double[] reciprocal(int arr1[],int arr2[],int arr3[])
     {
         double rec[] = {0,0,0};
