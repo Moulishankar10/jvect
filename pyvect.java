@@ -142,18 +142,22 @@ public class pyvect
     }
 
     // FUNCTION TO FIND RECIPROCAL OF THREE VECTORS
-    public static double[] reciprocal(int arr1[],int arr2[],int arr3[])
+    public static double[][] reciprocal(int arr1[],int arr2[],int arr3[])
     {
-        double rec[] = {0,0,0};
+        double rec1[] ,rec2[] ,rec3[] = {0,0,0};
         int c1[] = cross(arr2,arr3);
-        int c2[] = cross(arr1,arr2);
-        int d = dot(c2,arr3);
+        int c2[] = cross(arr3,arr1);
+        int c3[] = cross(arr1,arr2);
+        int d = dot(cross(arr1,arr2),arr3);
         for (int i=0;i<3;i++)
         {
-            rec[i] = c1[i]/d;
+            rec1[i] = c1[i]/d;
+            rec2[i] = c2[i]/d;
+            rec3[i] = c3[i]/d;
         }
-        return rec;
+        return new double[][] {rec1,rec2,rec3};
     }
+
 
     //public static void main(String[] args) 
     //{
