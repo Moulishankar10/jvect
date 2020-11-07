@@ -144,7 +144,9 @@ public class pyvect
     // FUNCTION TO FIND RECIPROCAL OF THREE VECTORS
     public static double[][] reciprocal(int arr1[],int arr2[],int arr3[])
     {
-        double rec1[] ,rec2[] ,rec3[] = {0,0,0};
+        double rec1[] = {0,0,0};
+        double rec2[] = {0,0,0};
+        double rec3[] = {0,0,0};
         int c1[] = cross(arr2,arr3);
         int c2[] = cross(arr3,arr1);
         int c3[] = cross(arr1,arr2);
@@ -158,9 +160,24 @@ public class pyvect
         return new double[][] {rec1,rec2,rec3};
     }
 
+    // FUNCTION TO FIND THE MAXIMUM VALUE OF ANY TWO VECTORS
+    public static double maxValue(int arr1[],int arr2[])
+    {
+        return modVector(arr1)*modVector(arr2);
+    }
 
-    //public static void main(String[] args) 
-    //{
-       // System.out.println(unitNormal([1,2,3],[4,5,6]));
-    //}
+    // FUNCTION TO FIND THE MINIMUM VALUE OF ANY TWO VECTORS
+    public static double minValue(int arr1[],int arr2[])
+    {
+        return -1.0*(modVector(arr1)*modVector(arr2));
+    }
+
+    // MAIN FUNCTION
+    public static void main(String[] args) 
+    {
+        int a[] = {1,2,3};
+        int b[] = {4,5,6};
+        double res[][] = unitNormal(a,b);
+       System.out.print(res);
+    }
 }
