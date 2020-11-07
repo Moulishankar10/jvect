@@ -173,11 +173,13 @@ public class pyvect
     }
 
     // MAIN FUNCTION
-    public static void main(String[] args) 
+    /*public static void main(String[] args) 
     {
         int a[] = {1,2,3};
         int b[] = {4,5,6};
         double res[][] = unitNormal(a,b);
        System.out.print(res);
     }
+
+    */
 }
