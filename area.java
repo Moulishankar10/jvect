@@ -15,6 +15,6 @@ public class area
         int c[] = obj.cross(arr1, arr2);
         double mod = obj.modVector(c);
         double res = Math.abs(Math.sqrt(mod));
-
+        return res;
     }
 }
