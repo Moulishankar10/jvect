@@ -9,6 +9,16 @@ import java.lang.Math;
 public class area 
 {
     // PRIVATE FUNCTIONS
+    public static int dot(int x[], int y[])
+    {
+        int dot_prod = 0;
+        for(int i=0;i<3;i++)
+        {
+            dot_prod = dot_prod + x[i]*y[i];
+        }
+        return dot_prod;
+    }
+
     private static int[] cross(int x[],int y[])
     {
         int cross_prod[] = {0,0,0};
@@ -57,11 +67,16 @@ public class area
     {
         return Math.abs(modVector(cross(arr1,arr2)));
     }
-    public static void main(String[]args)
+
+    public static double tetrahedron(int arr1[],int arr2[],int arr3[])
+    {
+        return Math.abs(0.1666*dot(cross(arr1,arr2),arr3));
+    }
+    /*public static void main(String[]args)
     {
         int a[] = {1,2,3};
         int b[] = {4,5,6};
         System.out.println(triangle_adj(a,b));
 
-    }
+    }*/
 }
