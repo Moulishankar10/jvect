@@ -27,8 +27,8 @@ public class area
     // PUBLIC FUNCTIONS
     public static double triangle_adj(int arr1[], int arr2[]) 
     {
-        int c[] = pyvect.cross(arr1, arr2);
-        double mod = pyvect.modVector(c);
+        int c[] = cross(arr1, arr2);
+        double mod = modVector(c);
         double res = Math.abs(Math.sqrt(mod));
         return res;
     }
