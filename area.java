@@ -33,6 +33,21 @@ public class area
         return res;
     }
 
+    public static double triangle_pos(int arr1[], int arr2[], int arr3[])
+    {
+        int c1[] = cross(arr1,arr2);
+        int c2[] = cross(arr2,arr3);
+        int c3[] = cross(arr3,arr1);
+        int c[] = {0,0,0};
+        
+        for (int i = 0;i<3;i++)
+        {
+            c[i] = c1[i]+c2[i]+c3[i];
+        }
+
+        return Math.abs(0.5*modVector(c));
+    }
+
     public static void main(String[]args)
     {
         int a[] = {1,2,3};
