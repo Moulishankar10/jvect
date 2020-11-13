@@ -53,6 +53,10 @@ public class area
         return Math.abs(0.5*modVector(cross(arr1,arr2)));
     }
 
+    public static double parallelogram(int arr1[], int arr2[])
+    {
+        return Math.abs(modVector(cross(arr1,arr2)));
+    }
     public static void main(String[]args)
     {
         int a[] = {1,2,3};
