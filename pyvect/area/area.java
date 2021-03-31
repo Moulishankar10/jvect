@@ -83,11 +83,4 @@ public class area
         return Math.abs(0.1666*dot(cross(arr1,arr2),arr3));
     }
     
-    /*public static void main(String[]args)
-    {
-        int a[] = {1,2,3};
-        int b[] = {4,5,6};
-        System.out.println(triangle_adj(a,b));
-
-    }*/
 }
