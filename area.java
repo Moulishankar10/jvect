@@ -8,35 +8,7 @@ import java.lang.Math;
 
 public class area 
 {
-    // PRIVATE FUNCTIONS
-
-    // FUNCTION TO FIND THE DOT PRODUCT
-    private static int dot(int x[], int y[])
-    {
-        int dot_prod = 0;
-        for(int i=0;i<3;i++) dot_prod = dot_prod + x[i]*y[i];
-        return dot_prod;
-    }
-
-    // FUNCTION TO FIND THE CROSS PRODUCT
-    private static int[] cross(int x[],int y[])
-    {
-        int cross_prod[] = new int[3];
-        cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*x[0] - x[0]*y[2];
-        cross_prod[2] = x[0]*y[1] - x[1]*y[0];
-        return cross_prod;
-    }
-
-    // FUNCTION TO FIND MODULUS OF A VECTOR
-    private static double modVector(int arr[])
-    {
-        double mod = Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
-        return mod;
-    }
-
-    // PUBLIC FUNCTIONS
-
+    
     // FUNCTION TO FIND AREA OF TRIANGLE WHEN ADJACENT SIDES ARE GIVEN
     public static double triangle_adj(int arr1[], int arr2[]) 
     {
