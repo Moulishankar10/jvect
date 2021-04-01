@@ -1,8 +1,5 @@
 package pyvect.dist;
 
-import pyvect.area;
-import java.lang.Math;
-
 public class dist
 {
     public static double[] pl_line(int[] a1, int[] a2, int[] u)
