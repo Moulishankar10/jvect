@@ -3,4 +3,5 @@ Java version of python package called 'pyvect' which used for various vector ope
 
 ## Developed by:  
 [Vigneshwar Ravichandar](https://github.com/ToastCoder) 
-[Moulishankar](https://github.com/Moulishankar10)
+
+[Moulishankar](https://github.com/Moulishankar10) 
