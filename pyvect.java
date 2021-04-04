@@ -1,5 +1,5 @@
 // PACKAGE DEFINITION
-package pyvect;
+package jvect;
 
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
@@ -173,7 +173,7 @@ public class pyvect
     }
 
     // MAIN FUNCTION
-    /*public static void main(String[] args) 
+    public static void main(String[] args) 
     {
         int a[] = {1,2,3};
         int b[] = {4,5,6};
@@ -181,5 +181,5 @@ public class pyvect
        System.out.print(res);
     }
 
-    */
+    
 }
