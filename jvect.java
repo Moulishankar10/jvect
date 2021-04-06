@@ -5,24 +5,20 @@ package jvect;
 import java.lang.Math;
 
 // PYVECT MAIN CLASS
-public class pyvect
+public class jvect
 {
-
     // FUNCTION TO FIND DOT PRODUCT
     public static int dot(int x[], int y[])
     {
         int dot_prod = 0;
-        for(int i=0;i<3;i++)
-        {
-            dot_prod = dot_prod + x[i]*y[i];
-        }
+        for(int i=0;i<3;i++) dot_prod += x[i]*y[i];
         return dot_prod;
     }
 
     // FUNCTION TO FIND CROSS PRODUCT
     public static int[] cross(int x[],int y[])
     {
-        int cross_prod[] = {0,0,0};
+        int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
         cross_prod[1] = x[2]*x[0] - x[0]*y[2];
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
@@ -32,61 +28,42 @@ public class pyvect
     // FUNCTION TO FIND MODULUS OF A VECTOR
     public static double modVector(int arr[])
     {
-        double mod = Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
-        return mod;
+        return Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
     }
 
     // FUNCTION TO FIND ANGLE BETWEEN TWO VECTORS
     public static double angle(int x[],int y[])
     {
-        double ang = Math.acos((dot(x,y))/(modVector(x)*modVector(y)));
-        return ang;
+        return Math.acos((dot(x,y))/(modVector(x)*modVector(y)));
     }
 
     // FUNCTION TO FIND PROJECTION OF A VECTOR OVER ANOTHER
     public static double projection(int x[], int y[])
     {
-        double mod = modVector(y);
-        double proj = dot(x,y)/mod;
-        return proj;
+        return dot(x,y)/modVector(y);
     }
 
     // FUNCTION TO FIND IF TWO VECTORS ARE PERPENDICULAR
     public static boolean isPerpendicular(int x[], int y[])
     {
-        if (dot(x,y) == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        boolean res = (dot(x,y) == 0)?true:false;
+        return res;
     }
 
     // FUNCTION TO FIND IF TWO VECTORS ARE COLLINEAR
     public static boolean isCollinear(int x[], int y[])
     {
-        int res[] = cross(x,y);
-        if ((res[0]==0)||(res[1]==0)||(res[2]==0))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        int c[] = cross(x,y);
+        boolean result = ((c[0]==0)&&(c[1]==0)&&(c[2]==0))?true:false;
+        return result;
     }
 
     // FUNCTION TO FIND UNIT VECTOR
     public static double[] unitVector(int arr[])
     {
-        double unit[] = {0,0,0};
+        double[] unit = new double[3];
         double mod = modVector(arr);
-        for(int i=0;i<3;i++)
-        {
-            unit[i] = unit[i]/mod;
-        }
+        for(int i=0;i<3;i++) unit[i] = arr[i]/mod;
         return unit;
     }
 
