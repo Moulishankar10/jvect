@@ -62,16 +62,14 @@ public class jvect
     public static double[] unitVector(int arr[])
     {
         double[] unit = new double[3];
-        double mod = modVector(arr);
-        for(int i=0;i<3;i++) unit[i] = arr[i]/mod;
+        for(int i=0;i<3;i++) unit[i] = arr[i]/modVector(arr);
         return unit;
     }
 
     // FUNCTION TO FIND UNIT NORMAL 
     public static double[][] unitNormal(int x[],int y[])
     {   
-        int cross_prod[] = cross(x,y);
-        double u_norm[] = unitVector(cross_prod);
+        double u_norm[] = unitVector(cross(x,y));
         double u_norm_inv[] = new double[3];
         for (int i=0;i<3;i++)
         {
@@ -83,26 +81,21 @@ public class jvect
     // FUNCTION TO FIND BISECTOR OF TWO VECTORS
     public static double[] bisector(int x[],int y[])
     {
-        double bsect[] = {0,0,0};
+        double[] bsect = new double[3];
         double unit_a[] = unitVector(x);
         double unit_b[] = unitVector(y);
-        for (int i=0;i<3;i++)
-        {
-            bsect[i] = unit_a[i]+unit_b[i];
-        }
+        for (int i=0;i<3;i++) bsect[i] = unit_a[i] + unit_b[i];
         return bsect;
     }
 
     // FUNCTION TO FIND POSITION VECTOR
-    public static double[] positionVector(int x[],int y[])
+    public static double[] pos_vector(int x[],int y[])
     {
-        double pos[] = {0,0,0};
-        for(int i=0;i<3;i++)
-        {
-            pos[i] = 0.5*(x[i]+y[i]);
-        }
+        double[] pos = new double[3];
+        for(int i=0;i<3;i++) pos[i] = 0.5*(x[i]+y[i]);
         return pos;
     }
+    
 
     // FUNCTION TO FIND IF TWO VECTORS ARE COPLANAR
     public static boolean isCoplanar(int x[],int y[],int z[])
