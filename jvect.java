@@ -3,6 +3,8 @@ package jvect;
 
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
+import java.util.*;
+
 
 // PYVECT MAIN CLASS
 public class jvect
@@ -95,28 +97,20 @@ public class jvect
         for(int i=0;i<3;i++) pos[i] = 0.5*(x[i]+y[i]);
         return pos;
     }
-    
 
     // FUNCTION TO FIND IF TWO VECTORS ARE COPLANAR
     public static boolean isCoplanar(int x[],int y[],int z[])
     {
-        int cop = dot(cross(x,y),z);
-        if (cop == 0)
-        {
-            return true;
-        } 
-        else
-        {
-            return false;
-        }
+        boolean res = (dot(cross(x,y),z) == 0)?true:false;
+        return res;
     }
 
     // FUNCTION TO FIND RECIPROCAL OF THREE VECTORS
-    public static double[][] reciprocal(int x[],int y[],int z[])
+    public static int[][] reciprocal(int x[],int y[],int z[])
     {
-        double rec1[] = {0,0,0};
-        double rec2[] = {0,0,0};
-        double rec3[] = {0,0,0};
+        int rec1[] = new int[3];
+        int rec2[] = new int[3];
+        int rec3[] = new int[3];
         int c1[] = cross(y,z);
         int c2[] = cross(z,x);
         int c3[] = cross(x,y);
@@ -127,7 +121,7 @@ public class jvect
             rec2[i] = c2[i]/d;
             rec3[i] = c3[i]/d;
         }
-        return new double[][] {rec1,rec2,rec3};
+        return new int[][] {rec1,rec2,rec3};
     }
 
     // FUNCTION TO FIND THE MAXIMUM VALUE OF ANY TWO VECTORS
@@ -142,14 +136,23 @@ public class jvect
         return -1.0*(modVector(x)*modVector(y));
     }
 
-    // MAIN FUNCTION
+/*
+    // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args) 
     {
-        int a[] = {1,2,3};
-        int b[] = {4,5,6};
-        double res[][] = unitNormal(a,b);
-       System.out.print(res);
+        int a[] = {1,7,3};
+        int b[] = {4,2,6};
+        int c[] = {6,4,8};
+        int res[][] = reciprocal(a,b,c);
+        for (int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                System.out.print(res[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        
     }
 
-    
+*/    
 }
