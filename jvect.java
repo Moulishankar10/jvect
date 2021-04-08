@@ -30,7 +30,7 @@ public class jvect
     // FUNCTION TO FIND MODULUS OF A VECTOR
     public static double modVector(int arr[])
     {
-        return Math.sqrt((arr[0]^2)+(arr[1]^2)+(arr[2]^2));
+        return Math.sqrt((arr[0]*arr[0])+(arr[1]*arr[1])+(arr[2]*arr[2]));
     }
 
     // FUNCTION TO FIND ANGLE BETWEEN TWO VECTORS
