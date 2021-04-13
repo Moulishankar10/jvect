@@ -66,7 +66,7 @@ public class dist
     // FUNCTION TO FIND THE DISTANCE TWO PARALLEL PLANES
     public static double pl_planes(int a, int b, int c, int d1, int d2)
     {
-        return Math.abs(Math.abs(d1-d2)/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+        return Math.abs((d1-d2)/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
     }
 
     // FUNCTION TO FIND THE DISTANCE BETWEEN TWO VECTORS
@@ -75,13 +75,12 @@ public class dist
         return Math.sqrt(Math.abs(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1, 2)));
     }
 
-    /*
+    
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
         int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {4,-2,5}, v[] = {2,8,7};
-        System.out.println(distance(1,2,3,4,5,6));
+        System.out.println(pl_planes(1,2,3,4,5));
     }
-    */
     
     
 }
