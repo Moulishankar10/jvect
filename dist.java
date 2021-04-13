@@ -22,7 +22,7 @@ public class dist
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*x[0] - x[0]*y[2];
+        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
@@ -42,11 +42,19 @@ public class dist
         return x/modVector(u);
     }
 
+    public static double sk_line(int[] a1, int[] a2, int[] u, int[] v)
+    {
+        int arr[] = new int[3];
+        for (int i = 0; i<3; i++) arr[i] = a2[i] - a1[i];
+        int x = arr[0]*(u[1]*v[2] - (u[2]*v[1])) - (arr[1]*(u[0]*v[2] - (u[2]*v[0]))) + (arr[2]*(u[0]*v[1] - (u[1]*v[0])));
+        return Math.abs(x/modVector(cross(u,v)));
+    }
+
     /*
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
-        int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {5,6,7};
-        System.out.println(pl_line(a1,a2,u));
+        int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {4,-2,5}, v[] = {2,8,7};
+        System.out.println(sk_line(a1, a2, u, v));
     }
     */
 }
