@@ -1,10 +1,11 @@
-// JVECT.AREA SUBPACKAGE
+// JVECT.CENT SUBPACKAGE
 
 // PACKAGE DEFINITION
 package jvect.cent;
 
 public class cent
 {
+    //FUNCTION TO FIND CENTROID IOF A TRIANGLE
     public static double[] triangle(int[] arr1, int[] arr2,int[] arr3)
     {
         double res[] = new double[3];
@@ -12,6 +13,7 @@ public class cent
         return res;
     }
 
+    //FUNCTION TO FIND CENTROID OF A TETRAHEDRON
     public static double[] tetrahedron(int[] arr1, int[] arr2,int[] arr3, int[] arr4)
     {
         double res[] = new double[3];
