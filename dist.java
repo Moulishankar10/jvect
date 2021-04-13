@@ -5,7 +5,6 @@ package pyvect.dist;
 
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
-import java.util.*;
 
 public class dist
 {
@@ -75,12 +74,12 @@ public class dist
         return Math.sqrt(Math.abs(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1, 2)));
     }
 
-    
+    /*
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
         int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {4,-2,5}, v[] = {2,8,7};
         System.out.println(pl_planes(1,2,3,4,5));
     }
-    
+    */
     
 }
