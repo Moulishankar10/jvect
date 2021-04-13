@@ -22,7 +22,7 @@ public class area
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*x[0] - x[0]*y[2];
+        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
