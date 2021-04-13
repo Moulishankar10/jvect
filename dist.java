@@ -42,6 +42,7 @@ public class dist
         return x/modVector(u);
     }
 
+    // FUNCTION TO FIND THE DISTANCE BETWEEN TWO SKEW LINES
     public static double sk_line(int[] a1, int[] a2, int[] u, int[] v)
     {
         int arr[] = new int[3];
@@ -50,11 +51,25 @@ public class dist
         return Math.abs(x/modVector(cross(u,v)));
     }
 
+    // FUNCTION TO FIND THE DISTANCE BETWEEN A POINT AND A PLANE
+    public static double pt_plane(int x, int y, int z, int a, int b, int c, int d)
+    {
+        return Math.abs(((a*x)+(b*y)+(c*z)+d)/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+    }
+
+    // FUNCTION TO FIND THE DISTANCE BETWEEN THE ORIGIN AND A PLANE
+    public static double or_plane(int a, int b, int c, int d)
+    {
+        return Math.abs(d/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+    }
+    
+
     /*
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
         int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {4,-2,5}, v[] = {2,8,7};
-        System.out.println(sk_line(a1, a2, u, v));
+        System.out.println(or_plane(1,2,3,4));
     }
     */
+    
 }
