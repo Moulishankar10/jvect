@@ -22,7 +22,7 @@ public class jvect
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
+        cross_prod[1] = (x[0]*y[2] - x[2]*y[0])*-1;
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
@@ -106,22 +106,22 @@ public class jvect
     }
 
     // FUNCTION TO FIND RECIPROCAL OF THREE VECTORS
-    public static int[][] reciprocal(int x[],int y[],int z[])
+    public static double[][] reciprocal(int x[],int y[],int z[])
     {
-        int rec1[] = new int[3];
-        int rec2[] = new int[3];
-        int rec3[] = new int[3];
+        double rec1[] = new double[3];
+        double rec2[] = new double[3];
+        double rec3[] = new double[3];
         int c1[] = cross(y,z);
         int c2[] = cross(z,x);
         int c3[] = cross(x,y);
         int d = dot(cross(x,y),z);
         for (int i=0;i<3;i++)
         {
-            rec1[i] = c1[i]/d;
-            rec2[i] = c2[i]/d;
-            rec3[i] = c3[i]/d;
+            rec1[i] = (double)c1[i]/d;
+            rec2[i] = (double)c2[i]/d;
+            rec3[i] = (double)c3[i]/d;
         }
-        return new int[][] {rec1,rec2,rec3};
+        return new double[][] {rec1,rec2,rec3};
     }
 
     // FUNCTION TO FIND THE MAXIMUM VALUE OF ANY TWO VECTORS
@@ -136,23 +136,23 @@ public class jvect
         return -1.0*(modVector(x)*modVector(y));
     }
 
-/*
+    /*
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args) 
     {
-        int a[] = {1,7,3};
+        int a[] = {10,2,4};
         int b[] = {4,2,6};
-        int c[] = {6,4,8};
-        int res[][] = reciprocal(a,b,c);
+        int c[] = {-7,-6,-9};
+        double res[][] = reciprocal(a,b,c);
+        //System.out.println(res);
+        
         for (int i=0;i<3;i++){
-            for(int j=0;j<3;j++){
-                System.out.print(res[i][j] + " ");
-            }
+            for(int j=0;j<3;j++) System.out.print(res[i][j] + " ");
             System.out.println();
         }
         
-        
+        System.out.println();
     }
 
-*/    
+*/
 }
