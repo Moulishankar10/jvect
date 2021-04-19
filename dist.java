@@ -1,7 +1,7 @@
 // JVECT.DIST SUBPACKAGE
 
 // PACKAGE DEFINITION   
-package jvect.dist;
+package jvect.dist; 
 
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
@@ -21,7 +21,7 @@ public class dist
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
+        cross_prod[1] = (x[0]*y[2] - x[2]*y[0])*-1;
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
@@ -50,6 +50,7 @@ public class dist
         return Math.abs(x/modVector(cross(u,v)));
     }
 
+    /*
     // FUNCTION TO FIND THE DISTANCE BETWEEN A POINT AND A PLANE
     public static double pt_plane(int x, int y, int z, int a, int b, int c, int d)
     {
@@ -77,9 +78,9 @@ public class dist
     
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
-        int a1[] = {1,2,3}, a2[] = {2,3,4}, u[] = {4,-2,5}, v[] = {2,8,7};
-        System.out.println(pl_planes(1,2,3,4,5));
+        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12};      
+        System.out.println(sk_line(a,b,c,d));
     }
     
-    
+ */   
 }
