@@ -22,7 +22,7 @@ public class area
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
+        cross_prod[1] = (x[0]*y[2] - x[2]*y[0])*-1;
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
@@ -65,11 +65,12 @@ public class area
     // FUNCTION TO FIND THE AREA OF TETRAHEDRON WHEN THREE POSITIONAL VECTORS ARE GIVEN
     public static double tetrahedron(int arr1[],int arr2[],int arr3[])
     {
-        return 0.1666*dot(cross(arr1,arr2),arr3);
+        return Math.abs(0.1666*dot(cross(arr1,arr2),arr3));
     }
+    
     /*
     public static void main(String[] args){
-        int a[] = {1,2,3}, b[] = {3,4,-5}, c[] = {2,8,-7};
+        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,-44,12};
         System.out.println(tetrahedron(a,b,c));
     }
     */
