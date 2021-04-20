@@ -50,13 +50,14 @@ public class dist
         return Math.abs(x/modVector(cross(u,v)));
     }
 
-    /*
+    
     // FUNCTION TO FIND THE DISTANCE BETWEEN A POINT AND A PLANE
-    public static double pt_plane(int x, int y, int z, int a, int b, int c, int d)
+    public static double pt_plane(int[] point, int[] plane)
     {
-        return Math.abs(((a*x)+(b*y)+(c*z)+d)/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+        return Math.abs(((plane[0]*point[0])+(plane[1]*point[1])+(plane[2]*point[2])+plane[3])/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5)));
     }
 
+    /*
     // FUNCTION TO FIND THE DISTANCE BETWEEN THE ORIGIN AND A PLANE
     public static double or_plane(int a, int b, int c, int d)
     {
@@ -78,9 +79,9 @@ public class dist
     
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
-        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12};      
-        System.out.println(sk_line(a,b,c,d));
+        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12}, b1[] = {1,2,3,4};      
+        System.out.println(pt_plane(a,b1));
     }
     
- */   
+    */
 }
