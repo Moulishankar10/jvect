@@ -57,13 +57,14 @@ public class dist
         return Math.abs(((plane[0]*point[0])+(plane[1]*point[1])+(plane[2]*point[2])+plane[3])/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5)));
     }
 
-    /*
+    
     // FUNCTION TO FIND THE DISTANCE BETWEEN THE ORIGIN AND A PLANE
-    public static double or_plane(int a, int b, int c, int d)
+    public static double or_plane(int[] plane)
     {
-        return Math.abs(d/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+        return Math.abs(plane[3]/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5)));
     }
-
+    
+    /*
     // FUNCTION TO FIND THE DISTANCE TWO PARALLEL PLANES
     public static double pl_planes(int a, int b, int c, int d1, int d2)
     {
@@ -76,12 +77,11 @@ public class dist
         return Math.sqrt(Math.abs(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1, 2)));
     }
 
-    
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
         int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12}, b1[] = {1,2,3,4};      
-        System.out.println(pt_plane(a,b1));
+        System.out.println(or_plane(b1));
     }
     
-    */
+ */   
 }
