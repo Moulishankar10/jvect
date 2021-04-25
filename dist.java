@@ -5,6 +5,7 @@ package jvect.dist;
 
 // IMPORTING REQUIRED LIBRARIES
 import java.lang.Math;
+import java.util.*;
 
 public class dist
 {
@@ -64,24 +65,35 @@ public class dist
         return Math.abs(plane[3]/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5)));
     }
     
-    /*
+    
     // FUNCTION TO FIND THE DISTANCE TWO PARALLEL PLANES
-    public static double pl_planes(int a, int b, int c, int d1, int d2)
+    public static double pl_planes(int[] plane1, int[] plane2) 
     {
-        return Math.abs((d1-d2)/(Math.pow((a*a)+(b*b)+(c*c),0.5)));
+        if (plane1[0]%plane2[0] == 0){
+            int x = plane1[0]/plane2[0];
+            for (int i=0;i<4;i++) plane2[i] *= x;
+        }
+        else if (plane2[0]%plane1[0] == 0){
+            int x = plane2[0]/plane1[0];
+            for (int i=0;i<4;i++) plane1[i] *= x;
+        }
+
+        return Math.abs(plane2[3]-plane1[3])/(Math.pow((plane1[0]*plane2[0])+(plane1[1]*plane2[1])+(plane1[2]*plane2[2]),0.5));
     }
 
+    /*
     // FUNCTION TO FIND THE DISTANCE BETWEEN TWO VECTORS
     public static double distance(int x1, int y1, int z1, int x2, int y2, int z2)
     {
         return Math.sqrt(Math.abs(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1, 2)));
     }
+      
 
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
-        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12}, b1[] = {1,2,3,4};      
-        System.out.println(or_plane(b1));
+        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12}, b1[] = {1,2,-2,9}, b2[] = {2,4,-4,-6};      
+        System.out.println(pl_planes(b2,b1));
     }
-    
- */   
+     */ 
+
 }
