@@ -22,7 +22,7 @@ public class prod
     {
         int[] cross_prod = new int[3];
         cross_prod[0] = x[1]*y[2] - x[2]*y[1];
-        cross_prod[1] = x[2]*y[0] - x[0]*y[2];
+        cross_prod[1] = (x[0]*y[2] - x[2]*y[0])*-1; 
         cross_prod[2] = x[0]*y[1] - x[1]*y[0];
         return cross_prod;
     }
@@ -57,11 +57,11 @@ public class prod
         return cross(cross(w,x),cross(y,z));
     }
 
-    /*
+    /*    
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
-        int a1[] = {1,2,3}, a2[] = {2,3,4}, a3[] = {4,2,8}, a4[] = {3,4,8};
-        int[] arr = v4(a1,a2,a3,a4);
+        int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12};
+        int[] arr = v4(a,b,c,d);
         System.out.println(Arrays.toString(arr));
     }
     */
