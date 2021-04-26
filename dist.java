@@ -81,19 +81,19 @@ public class dist
         return Math.abs(plane2[3]-plane1[3])/(Math.pow((plane1[0]*plane2[0])+(plane1[1]*plane2[1])+(plane1[2]*plane2[2]),0.5));
     }
 
-    /*
+    
     // FUNCTION TO FIND THE DISTANCE BETWEEN TWO VECTORS
-    public static double distance(int x1, int y1, int z1, int x2, int y2, int z2)
+    public static double distance(int[] vector1, int[] vector2)
     {
-        return Math.sqrt(Math.abs(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2) + Math.pow(z2-z1, 2)));
+        return Math.sqrt(Math.pow(vector2[0]-vector1[0], 2) + Math.pow(vector2[1]-vector1[1], 2) + Math.pow(vector2[2]-vector1[2], 2));
     }
       
-
+    /*
     // MAIN FUNCTION FOR TESTING PURPOSE
     public static void main(String[] args){
         int a[] = {10,2,4}, b[] = {4,2,6}, c[] = {-7,-6,-9}, d[] = {4,20,12}, b1[] = {1,2,-2,9}, b2[] = {2,4,-4,-6};      
-        System.out.println(pl_planes(b2,b1));
+        System.out.println(distance(a,b));
     }
-     */ 
+    */ 
 
 }
