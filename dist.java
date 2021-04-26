@@ -55,7 +55,7 @@ public class dist
     // FUNCTION TO FIND THE DISTANCE BETWEEN A POINT AND A PLANE
     public static double pt_plane(int[] point, int[] plane)
     {
-        return Math.abs(((plane[0]*point[0])+(plane[1]*point[1])+(plane[2]*point[2])+plane[3])/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5)));
+        return Math.abs((plane[0]*point[0])+(plane[1]*point[1])+(plane[2]*point[2])+plane[3])/(Math.pow((plane[0]*plane[0])+(plane[1]*plane[1])+(plane[2]*plane[2]),0.5));
     }
 
     
